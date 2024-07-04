@@ -1,0 +1,64 @@
+# Training config used for Interpretable Neural Representation training
+nr_root:
+  data:
+    root: "data_file_path"
+    data_filename: "file_type"
+    pretrained_model_path: None
+    fs: 256
+
+  cnn_encoder:
+    downsampling_rate : 2
+    repreated_blocks : 3
+    output_channels : 32
+
+  transformer:
+    embedded_dim: 256
+    depth : 3
+    num_heads: 4
+    dim_head : 64
+    talking_heads : True
+    attn_dropout : 0.3
+    class_token : True
+    patch_size : (8, 16)
+    overlap_ratio : 0.5
+
+  embedding:
+    embedding_model: "Glove"
+    pretrained_embedding: False
+    generated_embedding_dim: 256
+    emb_path: "path"
+
+  training:
+    input_res: 128
+    K_fold: 10
+    seed: 0
+    fp16: True
+    batch_size: 128
+    epochs: 100 #default 80
+    log_step: 1
+    num_classes: 88
+    device: "cuda"
+    device_ids: 1
+    embedding_checkpoint: 1
+    chkpt_interval: 1
+    optimizer: "AdamW"
+    lr: 1e-4
+    emb_lr: 1e-4
+    results_dir: "save path"
+    workers: 1
+    chkpt_prefix: "neural_representation"
+    alpha: 1.0
+    warmup_epochs : 10 # default 10
+    decay_epochs : 100
+    betas:
+      - 0.9
+      - 0.999
+    eps: 1e-8
+    weight_decay: 1e-4
+    num_positive: 2
+    num_negative: 2
+    pair_relation: False
+    load_pretrained_model: False
+    spatial_attention: True
+    spatial_attention_out: 32
+
