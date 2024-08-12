@@ -30,4 +30,4 @@ The superlet transform used for neural signals follows the methods described in 
 
 ## Training
 
-We conducted training using PyTorch Lightning. The model was defined using `pytorch-lightning==2.0.4`. The model we used consists of spatial attention, a CNN encoder, and a Transformer encoder. The entire training process, including the model definition, is specified in `model.py` using PyTorch Lightning. You can perform training using the parameters specified in `INR_params.yaml`.
+We conducted training using PyTorch Lightning. The model was defined using `pytorch-lightning==2.0.4`. The model we used consists of spatial attention, a CNN encoder, and a Transformer encoder. The entire training process, including the model definition, is specified in `NR_model.py` using PyTorch Lightning. You can perform training using the parameters specified in `INR_params.yaml`.
