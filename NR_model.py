@@ -252,7 +252,7 @@ class NeuralRepresentationModel(pl.LightningModule):
 
     def on_train_batch_start(self, batch, batch_index):
         """
-        Update lr and gumbel quant values according to current epoch/batch index
+        Update lr according to current epoch/batch index
         """
         current_step = (self.current_epoch * self.trainer.num_training_batches) + batch_index
 
@@ -361,16 +361,6 @@ class NeuralRepresentationModel(pl.LightningModule):
             embedding_optimizer.zero_grad()
             spatial_attn_optimizer.zero_grad()
             self.manual_backward(tr_loss)
-
-
-            # for param in self.enc.parameters():
-            #     if param.requires_grad and param.grad is not None:
-            #         param.grad.data *= 0.1
-
-            #
-            # for param in self.spec_attn.patch_embedding.proj.parameters():
-            #     if param.requires_grad:
-            #         param.grad.data *= 0.1
 
             attn_optimizer.step()
             enc_optimizer.step()
