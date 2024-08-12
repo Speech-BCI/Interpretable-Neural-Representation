@@ -29,4 +29,4 @@ testing_x_data = np.tile(x_data, (num_trials // x_data.shape[0], 1, 1, 1))
 testing_y_data = np.random.randint(0, unique_classes, num_trials)
 ```
 
-This replicated dataset is intended for testing purposes only. The sample is provided for debugging, prototyping, and initial testing of code, but it is not a substitute for the full dataset.
+The sample data is provided for testing and debugging purposes, and the full dataset will be made available to all participants through OSF. This replicated dataset is intended for testing purposes only. The sample is provided for debugging, prototyping, and initial testing of code, but it is not a substitute for the full dataset.
