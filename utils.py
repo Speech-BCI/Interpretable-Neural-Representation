@@ -175,17 +175,17 @@ def analyze_and_save_stat_results(task, epoch, t_statistic, p_value, wilcoxon_st
                 lesser_group = 'semantic group'
         elif 0.001 < p_value <= 0.01:
             if (statistic > 0 and is_t_test) or (statistic < 0 and not is_t_test):
-                greater_group = 'good semantic group'
+                greater_group = 'moderately stronger semantic group'
                 lesser_group = 'phonological group'
             else:
-                greater_group = 'good phonological group'
+                greater_group = 'moderately stronger phonological group'
                 lesser_group = 'semantic group'
         elif p_value <= 0.001:
             if (statistic > 0 and is_t_test) or (statistic < 0 and not is_t_test):
-                greater_group = 'best semantic group'
+                greater_group = 'significantly stronger semantic group'
                 lesser_group = 'phonological group'
             else:
-                greater_group = 'best phonological group'
+                greater_group = 'significantly stronger phonological group'
                 lesser_group = 'semantic group'
         else:
             greater_group = 'None'
