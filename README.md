@@ -16,7 +16,7 @@ pip install -U -r requirements.txt
 
 ## Parameters
 
-All training parameters used in the experiments are specified in the `INR_params.yaml` file. For additional details, please refer to the information provided in the paper.
+All training parameters used in the experiments are specified in the `NR_params.yaml` file. For additional details, please refer to the information provided in the paper.
 
 ## Preprocessing
 
